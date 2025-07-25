@@ -8,34 +8,8 @@
 <body>
   <h2>Check the Console (F12) for Booking Status</h2>
 
-  <script>
-    const bookings = [
-        { roomNumber: 101, startDate: "2024-07-20", endDate: "2024-07-23" },
-        { roomNumber: 102, startDate: "2024-07-22", endDate: "2024-07-25" }
-    ];
-
-    function isOverlap(start1, end1, start2, end2) {
-        return !(new Date(end1) <= new Date(start2) || new Date(start1) >= new Date(end2));
-    }
-
-    function addBooking(newBooking) {
-        const { roomNumber, startDate, endDate } = newBooking;
-
-        for (let existing of bookings) {
-            if (existing.roomNumber === roomNumber &&
-                isOverlap(existing.startDate, existing.endDate, startDate, endDate)) {
-                console.log(`❌ Booking failed: Room ${roomNumber} is already booked from ${existing.startDate} to ${existing.endDate}`);
-                return;
-            }
-        }
-
-        bookings.push(newBooking);
-        console.log(`✅ Booking confirmed: Room ${roomNumber} from ${startDate} to ${endDate}`);
-    }
-
-    addBooking({ roomNumber: 101, startDate: "2024-07-22", endDate: "2024-07-24" });
-    addBooking({ roomNumber: 101, startDate: "2024-07-24", endDate: "2024-07-26" });
-    addBooking({ roomNumber: 102, startDate: "2024-07-20", endDate: "2024-07-21" });
+  <script src="app.js">
+   
   </script>
 </body>
 </html>
